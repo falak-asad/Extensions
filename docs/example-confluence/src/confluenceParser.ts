@@ -50,7 +50,7 @@ export class ConfluenceDataParser {
 
         // Handle Confluence task lists
         this.turndownService.addRule('confluenceTaskList', {
-            filter: (node) => node.nodeName === 'AC:TASK-LIST',
+            filter: ({ nodeName }) => nodeName === 'AC:TASK-LIST',
             replacement: (content, node) => {
                 const element = node as any;
                 const tasks = element.querySelectorAll ? element.querySelectorAll('ac\\:task') : [];
