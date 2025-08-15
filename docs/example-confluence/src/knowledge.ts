@@ -46,7 +46,7 @@ export const confluenceImport = createKnowledgeDescriptor({
             defaultValue: ["confluence"],
             description: "Source tags can be used to filter the search scope from the Flow. Press ENTER to add a Source Tag.",
         }
-    ],
+    ] as const,
     listSources: async ({ config })  => {
         const startTime = Date.now();
         const { connection, confluenceUrl, descendants, source_tag } = config;
