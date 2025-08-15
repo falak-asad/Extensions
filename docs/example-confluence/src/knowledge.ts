@@ -178,7 +178,7 @@ const fetch_data = async (url, headers) => {
     const startTime = Date.now();
     const response = await fetch(url, { headers });
     if (!response.ok) {
-        throw new Error(`Failed to fetch data: ${response.statusText} for url ${url}`); // Improved error message with URL
+        throw new Error(`Failed to fetch data: ${response.statusText} for url ${url}`);
     }
     return response.json();
 };
