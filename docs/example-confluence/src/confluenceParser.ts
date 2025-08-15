@@ -12,10 +12,7 @@ interface HeadingStackItem {
 }
 
 export class ConfluenceDataParser {
-    private targetHeadingsLevel: number;
-    private pageName: string = '';
     private turndownService: TurndownService;
-    private html: string;
 
     /**
      * Constructs a new ConfluenceDataParser instance.
@@ -23,7 +20,7 @@ export class ConfluenceDataParser {
      * @param pageName The name of the page
      * @param targetHeadingsLevel The target heading level to extract
      */
-    constructor(html: string, pageName: string, targetHeadingsLevel: number) {
+    constructor(private readonly html: string, private readonly pageName: string, private readonly targetHeadingsLevel: number) {
         this.html = html
         this.targetHeadingsLevel = targetHeadingsLevel;
         this.pageName = pageName;
